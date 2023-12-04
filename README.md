@@ -140,30 +140,30 @@ Finally, we run the last cell to store the restricted space $A$ in `./restricted
 ## Training
 We provide instructions for training the models for $k = 1, 2$ at separation rounds $n_1, n_2$ within the restricted configuration space $A$. 
 
-For training the model $\tilde{f}_{\theta}^{1}$ at $k = 1$ (we set $n_1=0$ across all benchmarks), we run the following:
+For training the model $\tilde{f}^{1}$ at $k = 1$ (we set $n_1=0$ across all benchmarks), we run the following:
 ```
 python train_k1.py --instances [the MILP class]
 ```
 The default directory of the restricted action space is `./restricted_space/{instance}/restricted_actions_space.npy`. One can change that by modifying the `--actiondir` and the `--actions_name`. The default directory for saving the model and $Z$ matrix is `./model/{instances}_k1`. One can change the save directory by modifying the `--savedir` argument.
 
-For training the model $\tilde{f}_{\theta}^{2}$ at $k = 2$, we then run:
+For training the model $\tilde{f}^{2}$ at $k = 2$, we then run:
 ```
 python train_k2.py --instances [the MILP class] \
                    --model_0_path [path to the model of k=1] \
                    --Z_0_path [Matrix Z for k=1] \
                    --step_k2 [the value of n_2]
 ```
-- For example, one can run the following code to train the model  $\tilde{f}_{\theta}^{2}$ at $k = 2$ for the Packing MILP class in Tang et al.:
+- For example, one can run the following code to train the model  $\tilde{f}^{2}$ at $k = 2$ for the Packing MILP class in Tang et al.:
 ```
 python train_k2.py --instances packing-60-60 --model_0_path ./model/packing-60-60_k1/model-42 --Z_0_path ./model/packing-60-60_k1/Z-42 --step_k2 5
 ```
 The default directory for saving the model and $Z$ matrix is at $k_2$ is `./model/{instances}_k2`. One can change the save directory by modifying the `--savedir` argument.
 
-- Example pretrained models $\tilde{f}_{\theta}^{1}$, $\tilde{f}_{\theta}^{2}$ and the associated $Z^1, Z^2$ matrices can be found at: `./example/model/{instances}/model_k1`, `./example/model/{instances}/model_k2`, `./example/model/{instances}/Z_k1`, and `./example/model/{instances}/Z_k2`. 
+- Example pretrained models $\tilde{f}^{1}$, $\tilde{f}^{2}$ and the associated $Z^1, Z^2$ matrices can be found at: `./example/model/{instances}/model_k1`, `./example/model/{instances}/model_k2`, `./example/model/{instances}/Z_k1`, and `./example/model/{instances}/Z_k2`. 
 
 ## Testing
 
-To test the models $\tilde{f}_{\theta}^{1}$ and $\tilde{f}_{\theta}^{2}$ at $k = 1, 2$, we can run:
+To test the models $\tilde{f}^{1}$ and $\tilde{f}^{2}$ at $k = 1, 2$, we can run:
 ```
 python test_k2.py --instances [the MILP class] \
                    --model_0_path [path the model of k=1] \
