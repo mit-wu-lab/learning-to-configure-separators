@@ -1,0 +1,7 @@
+ecole==0.8.1
+joblib==1.2.0
+numpy==1.19.0
+PySCIPOpt==3.3.0
+torch==1.9.0
+torch_geometric==1.7.2
+tqdm==4.65.0
