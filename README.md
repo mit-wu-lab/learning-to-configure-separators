@@ -19,7 +19,7 @@ Our implementation uses python 3.8.13 and Pytorch 1.9.0. The other package depen
 ```
 pip install -r requirements.txt
 ```
-Beside the listed python packages we also use a custom version of the [SCIP](https://www.scipopt.org) solver (v7.0.2) and the [PySCIPOpt](https://github.com/scipopt/PySCIPOpt) interface (v3.3.0), kindly provided by the authors of [1], that allows activating and deactivating separators at intermediate separation rounds during each solve (see Appendix A.6.3 for details). We are informed that the authors of [1] will make the code publicly available soon. The SCIP and PySCIPOpt plug-in follows a similar design to the one found at https://github.com/avrech/learning2cut, which is publicly available.
+Beside the listed python packages, we also use a custom version of the [SCIP](https://www.scipopt.org) solver (v7.0.2) and the [PySCIPOpt](https://github.com/scipopt/PySCIPOpt) interface (v3.3.0), kindly provided by the authors of [1], that allows activating and deactivating separators at intermediate separation rounds during each solve (see Appendix A.6.3 for details). We are informed that the authors of [1] will make the code publicly available soon. The SCIP and PySCIPOpt plug-in follows a similar design to the one found at https://github.com/avrech/learning2cut, which is publicly available.
 
 > [1] Paulus, Max B., et al. "Learning to cut by looking ahead: Cutting plane selection via imitation learning." International conference on machine learning. PMLR, 2022.
 
