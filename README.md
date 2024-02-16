@@ -81,14 +81,14 @@ We provide instructions on constructing the restricted configuration space, foll
 We first use random search to find a good instance-agnostic configuration, which we later use to construct the "Near Best Random" initial configuration subset (See Appendix A.3).
 ```
 cd restricted_space_generation
-python find_best_constant.py --instances [the MILP class] \
+python find_best_ins_agnostic.py --instances [the MILP class] \
                              --path_to_data_dir [directory of the data] \
                              --gap_limit [gap limit]
 ```
 - For example, one can run the following code for the Packing MILP class in Tang et al.: 
 ```
 cd restricted_space_generation
-python find_best_constant.py --instances packing-60-60 --path_to_data_dir ../data --gap_limit 0.0
+python find_best_ins_agnostic.py --instances packing-60-60 --path_to_data_dir ../data --gap_limit 0.0
 ```
 The result will be stored as a `best_ins_agnostic.npy` file in the `./restricted_space/{instances}` folder.
 
