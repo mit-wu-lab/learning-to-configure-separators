@@ -79,7 +79,7 @@ def multiprocess_helper(helper_args):
     default_time = 0
     repeat_time = 3
     for i in range(repeat_time):
-        default_time += solve(path_to_problem,action=None,default=-1)
+        default_time += solve(path_to_problem,action=None,default=-1) / repeat_time
     
     # for current configuration
     improv = 0
