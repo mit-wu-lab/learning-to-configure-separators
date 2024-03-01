@@ -24,7 +24,7 @@ def main():
     for ptype, kwargs, sense in INSTANCES:
         generator = get_generator(ptype, **kwargs)
         spec = '-'.join([str(i) for i in kwargs.values()])
-        path = f'{args.path_to_data_dir}/{ptype}'
+        path = f'{args.path_to_data_dir}/{ptype}-{spec}'
 
         for i, instance in enumerate(generator):
             model = instance  # .as_pyscipopt() not needed
